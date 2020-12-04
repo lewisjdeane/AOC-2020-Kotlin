@@ -1,5 +1,5 @@
 fun main() {
-    val passports = input.split("\n\n").map { Passport(it) }
+    val passports = input.split("\n\n").map { Passport(it.replace("\n", " ")) }
     println(a(passports))
     println(b(passports))
 }
@@ -38,7 +38,7 @@ private data class Passport(private val passportString: String) {
     }
 
     private fun getValueForField(field: String) =
-            passportString.split(field)[1].drop(1).takeWhile { it != ' ' && it != '\n' }
+            passportString.split(field)[1].drop(1).takeWhile { it != ' ' }
 }
 
 private fun String.isColor() = this.length == 6 && this.all { it in '0'..'9' || it in 'a'..'z' }
