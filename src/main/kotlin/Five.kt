@@ -3,39 +3,17 @@ fun main() {
     println(b())
 }
 
+private val seatIds: List<Int> by lazy { input.lines().map { it.toBinary() } }
+
 private fun a() = seatIds.max()!!
 
 private fun b(): Int {
-    data class SeatWithGapToNext(val seatId: Int, val gap: Int)
-
-    val sorted = seatIds.sorted()
-    val seatsWithGapToNext = (0 until sorted.size - 1).map {
-        SeatWithGapToNext(sorted[it], sorted[it+1]-sorted[it])
-    }
-    return seatsWithGapToNext.find { it.gap == 2 }!!.seatId + 1
+    val prevSeatId = seatIds.sorted().zipWithNext().find { it.second - it.first == 2 }!!.first
+    return prevSeatId + 1
 }
 
-private class Seat(private val partition: String) {
-
-    val seatId = getRow() * 8 + getColumn()
-
-    private fun getRow(): Int {
-        val rowPartition = partition.take(7)
-        return convertBinaryToDecimal(rowPartition, 'B')
-    }
-
-    private fun getColumn(): Int {
-        val columnPartition = partition.takeLast(3)
-        return convertBinaryToDecimal(columnPartition, 'R')
-    }
-
-    private fun convertBinaryToDecimal(s: String, char: Char): Int {
-        val rowBinary = s.map { if (it == char) '1' else '0' }.joinToString("")
-        return Integer.parseInt(rowBinary, 2)
-    }
-}
-
-private val seatIds: List<Int> by lazy { input.lines().map { Seat(it).seatId } }
+private fun String.toBinary() = Integer.parseInt(this.toBinaryString(), 2)
+private fun String.toBinaryString() = this.replace(Regex("[BR]"), "1").replace(Regex("[FL]"), "0")
 
 private const val input = """BFBFFBBRLR
 FBFBFFBRLL
