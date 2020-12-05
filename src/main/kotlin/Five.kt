@@ -12,7 +12,7 @@ private fun b(): Int {
     return prevSeatId + 1
 }
 
-private fun String.toBinary() = Integer.parseInt(this.toBinaryString(), 2)
+private fun String.toBinary() = this.toBinaryString().toInt(2)
 private fun String.toBinaryString() = this.replace(Regex("[BR]"), "1").replace(Regex("[FL]"), "0")
 
 private const val input = """BFBFFBBRLR
