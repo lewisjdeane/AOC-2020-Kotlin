@@ -1,4 +1,4 @@
-# AOC-2020-Kotlin
+# Advent of Code 2020
 
 | Problem | Solution |
 | :-- | :-- |
