@@ -3,8 +3,6 @@ fun main() {
     println(b())
 }
 
-private val seatIds: List<Int> by lazy { input.lines().map { it.toBinary() } }
-
 private fun a() = seatIds.max()!!
 
 private fun b(): Int {
@@ -12,7 +10,9 @@ private fun b(): Int {
     return prevSeatId + 1
 }
 
-private fun String.toBinary() = this.toBinaryString().toInt(2)
+private val seatIds: List<Int> by lazy { input.lines().map { it.toSeatId() } }
+
+private fun String.toSeatId() = this.toBinaryString().toInt(2)
 private fun String.toBinaryString() = this.replace(Regex("[BR]"), "1").replace(Regex("[FL]"), "0")
 
 private const val input = """BFBFFBBRLR
