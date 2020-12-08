@@ -1,0 +1,1 @@
+fun <T, U : Any> List<T>.firstNotNull(transform: (T) -> U?): U? = this.mapNotNull { transform(it) }.first()
