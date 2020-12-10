@@ -14,7 +14,7 @@ private fun a(stepX: Int = 3, stepY: Int = 1): Int {
 
 private fun b(): Long {
     val slopes = listOf(Pair(1, 1), Pair(3, 1), Pair(5, 1), Pair(7, 1), Pair(1, 2))
-    return slopes.map { a(it.first, it.second) }.fold(1L) { acc, slopeCount -> acc * slopeCount }
+    return slopes.map { a(it.first, it.second) }.product()
 }
 
 private fun Pair<Int, Int>.next(stepX: Int, stepY: Int) = this.copy(this.first + stepX, this.second + stepY)
