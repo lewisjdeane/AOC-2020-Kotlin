@@ -1,6 +1,7 @@
 import java.io.File
 
 abstract class Day<T, U>(private val dayNumber: Int) {
+
     abstract fun a(): T
     abstract fun b(): U
 
@@ -10,5 +11,6 @@ abstract class Day<T, U>(private val dayNumber: Int) {
         println("B: ${b()}")
     }
 
-    val inputLines: List<String> = File("src/main/resources/$dayNumber.txt").readLines()
+    val input = File("src/main/resources/$dayNumber.txt").readText()
+    val inputLines: List<String> = input.lines()
 }
