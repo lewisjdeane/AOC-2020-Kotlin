@@ -11,3 +11,4 @@
 |[Day 7](https://adventofcode.com/2020/day/7)|[Solution 7](https://github.com/lewisjdeane/AOC-2020-Kotlin/blob/main/src/main/kotlin/Seven.kt)|
 |[Day 8](https://adventofcode.com/2020/day/8)|[Solution 8](https://github.com/lewisjdeane/AOC-2020-Kotlin/blob/main/src/main/kotlin/Eight.kt)|
 |[Day 9](https://adventofcode.com/2020/day/9)|[Solution 9](https://github.com/lewisjdeane/AOC-2020-Kotlin/blob/main/src/main/kotlin/Nine.kt)|
+|[Day 10](https://adventofcode.com/2020/day/10)|[Solution 10](https://github.com/lewisjdeane/AOC-2020-Kotlin/blob/main/src/main/kotlin/Ten.kt)|
