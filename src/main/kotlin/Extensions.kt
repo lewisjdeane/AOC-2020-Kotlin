@@ -1,3 +1,5 @@
+import kotlin.math.absoluteValue
+
 fun <T, U : Any> List<T>.firstNotNull(transform: (T) -> U?): U = this.mapNotNull { transform(it) }.first()
 
 fun List<Int>.product(): Long = this.fold(1L) { acc, i -> acc * i }
@@ -12,5 +14,6 @@ fun String.padToLength(length: Int): CharArray {
     return copy.toCharArray()
 }
 inline fun <T> Iterable<T>.productBy(selector: (T) -> Long) = this.fold(1L) { acc, t -> acc * selector(t) }
+fun Pair<Int, Int>.manhattanDistance() = this.first.absoluteValue + this.second.absoluteValue
 
 val alphabet = 'a'..'z'
