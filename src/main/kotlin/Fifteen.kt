@@ -13,18 +13,18 @@ class Fifteen : Day<Int, Int>(15) {
         yieldAll(startSequence)
         val history = startSequence.mapIndexed { index, element -> element to index }.toMap().toMutableMap()
         var index = startSequence.size // First index is number of number of starting elements.
-        var next = 0
+        var next: Int? = null // We don't have a next element yet.
 
         // Yield elements infinitely.
         while (true) {
-            // Yield next.
-            yield(next)
+            // Yield next, if this we don't have a next element to check then default to unseen.
+            yield(next ?: 0)
 
             // Work out when this last one was seen - it's not been saved to the history yet.
             val lastIndexSeenAt = history[next] ?: index
 
             // Save last index this number was seen at.
-            history[next] = index
+            history[next ?: 0] = index
 
             // Calculate next gap.
             next = index - lastIndexSeenAt
