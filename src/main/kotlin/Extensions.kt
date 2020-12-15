@@ -12,3 +12,5 @@ fun String.padToLength(length: Int): CharArray {
     return copy.toCharArray()
 }
 inline fun <T> Iterable<T>.productBy(selector: (T) -> Long) = this.fold(1L) { acc, t -> acc * selector(t) }
+
+val alphabet = 'a'..'z'
