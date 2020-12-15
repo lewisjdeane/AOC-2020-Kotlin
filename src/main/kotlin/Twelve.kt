@@ -14,7 +14,7 @@ class Twelve : Day<Int, Int>(12) {
         }
         return state.position.manhattanDistance()
     }
-    
+
     enum class Part {
         A, B;
     }
