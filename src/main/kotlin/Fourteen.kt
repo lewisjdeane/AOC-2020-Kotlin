@@ -4,8 +4,8 @@ class Fourteen : Day<Long, Long>(14) {
 
     private val masksAndSetOperations = parseInput(inputLines)
 
-    override fun a() = Day14Part.A(masksAndSetOperations).solve()
-    override fun b() = Day14Part.B(masksAndSetOperations).solve()
+    override fun a() = Part.A(masksAndSetOperations).solve()
+    override fun b() = Part.B(masksAndSetOperations).solve()
 
     private fun parseInput(remainingLines: List<String>): List<MaskAndSetOperations> {
         return if (remainingLines.isEmpty()) {
@@ -17,12 +17,12 @@ class Fourteen : Day<Long, Long>(14) {
         }
     }
 
-    private sealed class Day14Part(
+    private sealed class Part(
         open val masksAndSetOperations: List<MaskAndSetOperations>,
         private val charToNotUpdate: Char
     ) {
-        data class A(override val masksAndSetOperations: List<MaskAndSetOperations>) : Day14Part(masksAndSetOperations, 'X')
-        data class B(override val masksAndSetOperations: List<MaskAndSetOperations>) : Day14Part(masksAndSetOperations, '0')
+        data class A(override val masksAndSetOperations: List<MaskAndSetOperations>) : Part(masksAndSetOperations, 'X')
+        data class B(override val masksAndSetOperations: List<MaskAndSetOperations>) : Part(masksAndSetOperations, '0')
 
         fun solve(): Long {
             val registers = mutableMapOf<Long, Long>()
