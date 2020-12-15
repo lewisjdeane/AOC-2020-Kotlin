@@ -8,7 +8,7 @@ abstract class Day<T, U>(private val dayNumber: Int) {
     fun solve() {
         println("Day number: $dayNumber")
         println("A: ${a()}")
-        println("B: ${b()}")
+        println("B: ${b()}\n")
     }
 
     val input = File("src/main/resources/$dayNumber.txt").readText()
