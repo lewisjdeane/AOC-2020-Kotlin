@@ -13,7 +13,8 @@ fun main() {
             Eleven(),
             Twelve(),
             Thirteen(),
-            Fourteen())
+            Fourteen(),
+            Fifteen())
 
     days.forEach { it.solve() }
 }
