@@ -19,3 +19,4 @@
 |[Day 15](https://adventofcode.com/2020/day/15)|[Solution 15](https://github.com/lewisjdeane/AOC-2020-Kotlin/blob/main/src/main/kotlin/Fifteen.kt)|
 |[Day 16](https://adventofcode.com/2020/day/16)|[Solution 16](https://github.com/lewisjdeane/AOC-2020-Kotlin/blob/main/src/main/kotlin/Sixteen.kt)|
 |[Day 17](https://adventofcode.com/2020/day/17)|[Solution 17](https://github.com/lewisjdeane/AOC-2020-Kotlin/blob/main/src/main/kotlin/Seventeen.kt)|
+|[Day 18](https://adventofcode.com/2020/day/18)|[Solution 18](https://github.com/lewisjdeane/AOC-2020-Kotlin/blob/main/src/main/kotlin/Eighteen.kt)|
